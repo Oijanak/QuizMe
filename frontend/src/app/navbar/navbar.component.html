@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" style="color: wheat">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>book</mat-icon>
+    </button></a
+  >
+  <span>Exams</span>
+  <span class="example-spacer"></span>
+  @if(!isLoggedIn){
+  <div>
+    <button
+      class="example-icon favorite-icon mr20"
+      aria-label="Example icon-button with heart icon"
+    >
+      <a routerLink="/login">Login</a>
+    </button>
+    <button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <a routerLink="/signup">Register</a>
+    </button>
+  </div>
+  } @else{
+  <button class="mr20">
+    {{ user.username }}
+  </button>
+
+  <button
+    (click)="logout()"
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    logout
+  </button>
+
+  }
+</mat-toolbar>

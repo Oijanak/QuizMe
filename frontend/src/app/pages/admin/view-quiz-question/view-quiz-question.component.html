@@ -1,0 +1,57 @@
+<h1>Question of {{ qTiltle }}</h1>
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="'/admin/add-question/' + qId + '/' + qTiltle"
+        >
+          Add Question
+        </button>
+      </div>
+      @for(question of questions;track question;let i=$index){
+      <mat-card>
+        <mat-card-content>
+          <p>
+            <span [innerHtml]="question.content">Q{{ i + 1 }}.</span>
+          </p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <p>1.{{ question.option1 }}</p>
+              </div>
+              <div class="col-md-6">
+                <p>2.{{ question.option2 }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p>3.{{ question.option3 }}</p>
+              </div>
+              <div class="col-md-6">
+                <p>4.{{ question.option4 }}</p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="mt20">Correct answer ==> {{ question.answer }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            class="mr20"
+            mat-raised-button
+            color="primary"
+            (click)="deleteQuestion(question.qid)"
+          >
+            Delete
+          </button>
+          <button mat-raised-button color="primary">Update</button>
+        </mat-card-actions>
+      </mat-card>
+
+      }
+    </div>
+  </div>
+</div>
