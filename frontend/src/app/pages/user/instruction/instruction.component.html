@@ -1,1 +1,48 @@
-<p>instruction works!</p>
+<div class="bootstrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Read Instructions Carefully </mat-card-title>
+            <mat-card-subtitle>One Step more to go</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <h3>{{ quiz.title }}</h3>
+            <p>{{ quiz.description }}</p>
+            <mat-divider></mat-divider>
+
+            <br />
+            <h1>Important Instructions</h1>
+            <ul>
+              <li>This quiz is for practice purpose</li>
+              <li>Time is limited : {{ quiz.numberOfQuestions * 2 }}min</li>
+              <li>Do not take more than 2 mins per quetions</li>
+              <li>There are {{ quiz.numberOfQuestions }} in this quiz</li>
+              <li>
+                Maximum marks is {{ quiz.maxMarks }} and each question of
+                {{ quiz.maxMarks / quiz.numberOfQuestions }}
+              </li>
+              <li>No Negative Marking</li>
+              <li>All Questions are of MCQ types</li>
+            </ul>
+
+            <mat-divider> </mat-divider>
+            <br />
+            <h1>Attempting Quiz</h1>
+            <ul>
+              <li>Click Start button to attempt quiz</li>
+              <li>Scroll down to move to next Question</li>
+              <li>Select the correct answer</li>
+              <li>Click on the submit button after completion</li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary">Start Quiz</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
